@@ -1,0 +1,8 @@
+# ignore all Emacs backups
+*~
+
+# ignore specific site_config files 
+/site_config/lemhi.bash
+/site_config/bitterroot.bash
+/site_config/windriver.bash
+/site_config/sawtooth.bash
