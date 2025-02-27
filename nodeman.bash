@@ -40,7 +40,7 @@ source $NM_HOME/nodeman_list.bash
 source $NM_HOME/nodeman_util.bash
 
 
-NM_SITE_CONFIG_FILE=$(egrep -l ".*CLUSTER_HOSTNAMES.*=$HOSTNAME" site_config/* | head -n 1)
+NM_SITE_CONFIG_FILE=$(egrep -l ".*CLUSTER_HOSTNAMES.*=$HOSTNAME" $NM_HOME/site_config/* | head -n 1)
 
 if [ -f $NM_SITE_CONFIG_FILE ]; then
 
