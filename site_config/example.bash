@@ -32,3 +32,5 @@ source $NM_HOME/nodeman_sched_slurm.bash               # Use if you have Slurm
 
 # Here you may also want to override where data and logs are written
 # Defaults to $NM_HOME/data
+
+# NM_DATA=$NM_HOME/data/example
