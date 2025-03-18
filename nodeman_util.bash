@@ -91,7 +91,7 @@ nm.power.status () {
 	$NM_IPMI -H $h.bmc chassis power status
     }
     export -f single
-    nm._parallel -j50 --tagstring "{}:__" single
+    nm._parallel -j50 --tagstring "{}: " single
 }
 
 nm.reboot () {
