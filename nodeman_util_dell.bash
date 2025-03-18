@@ -32,6 +32,18 @@ nm.system.set.thermalprofile () {
     nm._parallel single {} \"$TP\"
 }
 
+
+nm.bmc.taskclear () {
+    single () {
+	h=$1.drac.cluster
+	OUT=$($NM_RACADM -r $h jobqueue delete --all)
+	echo "$1 $OUT"
+    }
+    export -f single
+    nm._parallel single
+}
+
+
 nm.system.get.thermalprofile () {
     single () {
 	h=$1.drac.cluster
