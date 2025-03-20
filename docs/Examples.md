@@ -141,12 +141,12 @@ Give me the IP addresses where scratch is mounted
 nm.cluset @rack1 | nm.ssh "mount | grep scratch | sed 's/.*mountaddr=\(.*\),mou.*/\1/'" 
 ```
 
-Show nodes with error on all nodes that are un unhealthy state
+Show nodes with in an unhealthy state and their last error
 ```
 nm.cluset @rack2 | nm.sel.viewroll | grep -v "= Ok"
 ```
 
-Group nodes into ones with the nhc directory and ones that don't
+Group into nodes with the nhc directory and ones without the nhc directory
 ```
 nm.cluset compute[003-006,017-160,168-172,174-247,249-336] | nm.ssh "ls -l /etc/nhc' | clubak -c
 ```
