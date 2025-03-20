@@ -26,6 +26,18 @@ compute329: Chassis Service Tag     = BHR5ABD
 ...
 
 ```
+
+Give me a list of nodes with network issues
+```
+=> nm.nodes | nm.net.sick 
+r5n32: 	ping failed: ib=0 eth=0 bmc=1
+r5n32: sick
+r6n39: 	ping failed: ib=1 eth=1 bmc=0
+r6n39: sick
+r7n36: sick
+r7n36: 	ping failed: ib=1 eth=1 bmc=0
+```
+
 Make sure all compute nodes are set to Uefi
 ```
 => nm.nodes | nm.bios.get.bootmode | grep Boot
@@ -34,11 +46,11 @@ compute233: BootMode=Uefi
 compute265: BootMode=Uefi
 ```
 
-Look at systems with network sick vs healthy
+Look at systems with network sick vs healthy, show generating host lists with echo or cluset.
 ```
 => echo compute0{10..12} | nm.split | nm.net.healthy
 ...
-=> echo compute0{10..12} | nm.split | nm.net.sick
+=> nm.cluset compute0[10-12] | nm.net.sick
 ...
 ```
 
